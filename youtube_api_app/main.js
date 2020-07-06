@@ -16,8 +16,14 @@ const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
 const videoContainer = document.getElementById('video-container');
 
-const defaultChannel = "techguyweb";
+const defaultChannel = "KingoftheDot";
 
+// Form submit and chage channel
+channelForm.addEventListener("submit", e=> {
+  e.preventDefault();
+  const channel = channelInput.value;
+  getChannel(channel)
+});
 // Load auth2 library
 function handleClientLoad(){
   gapi.load('client:auth2', initClient);
@@ -77,21 +83,62 @@ function handleSignoutClick() {
     })
     .then(response=>{
       console.log(response)
-      const channel = response.result.items[0]);
+      const channel = response.result.items[0];
 
       const output =`
       <ul class="collection">
         <li class="collection-item"> Title: ${channel.snippet.title}</li>
         <li class="collection-item">Id: ${channel.id}</li>
-        <li class="collection-item">Subscribers: ${channel.statistics.subscriberCount}</li>
-        <li class="collection-item">Views: ${channel.statistics.viewCount}</li>
+        <li class="collection-item">Subscribers: ${numberWithCommas(channel.statistics.subscriberCount)}</li>
+        <li class="collection-item">Views: ${numberWithCommas(
+          channel.statistics.viewCount)}</li>
         <li class="collection-item">Videos: ${channel.statistics.videoCount}</li>
         </ul>
         <p>${channel.snippet.description}</p>
         <hr>
         <a class="btn grey darken-2" target="_blank" href="https://youtube.com/${channel.snippet.customUrl}">Visit Channel</a>`;
         showChannelData(output);
+
+        const playlistId = channel.contentDetails.relatedPlaylists.uploads;
+        requestVideoPlaylist(playlistId)
     })
     .catch(err => alert('No Channel By That Name'));
   }
 
+  // Add commas to number
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function requestVideoPlaylist(playlistId) {
+  const requestOptions = {
+    playlistId: playlistId,
+    part: 'snippet',
+    maxResults: 12
+  };
+
+  const request = gapi.client.youtube.playlistItems.list(requestOptions);
+
+  request.execute(response => {
+    console.log(response);
+    const playlistItems = response.result.items;
+      if(playlistItems){
+        let output = '<br><h4 class="center-align">Lastest Videos</h4>';
+
+        //  Loop through video and append output
+        playlistItems.forEach(item => {
+          const videoId = item.snippet.resourceId.videoId
+
+          output += `
+          <div class ="col s3">
+          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>`
+        });
+
+        // 
+        videoContainer.innerHTML = output;
+      }else {
+        videoContainer.innerHTML = "No Uploaded Videos";
+      }
+  })
+}
