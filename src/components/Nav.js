@@ -9,12 +9,13 @@ class Nav extends Component {
    
 return(
   <nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Encore</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+  <div className="nav-wrapper">
+    <a href="#" className="brand-logo">Encore</a>
+    <ul id="nav-mobile" className="right hide-on-med-and-down">
      
       <li><Link to="/League">Leagues</Link></li>
       <li><Link to="/Battleraplogy">Battleraplogy</Link></li>
+      <li><Link to="/LyricsCard" >LyricsCard</Link></li>
       <li><Link to="/Signin" >Sign in</Link></li>
     </ul>
   </div>

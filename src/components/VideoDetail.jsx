@@ -1,12 +1,12 @@
 import React from "react";
 import YouTube from 'react-youtube'
 import { Paper, Typography } from "@material-ui/core";
-import { VideoItem } from "./VideoItem";
+// import { VideoItem } from "./VideoItem";
 
   const VideoDetail = ({video, onPlay}) => {
     const opts = {
-      height: '390',
-      width: '640',
+      height: '500',
+      width: '100%',
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
@@ -17,8 +17,10 @@ import { VideoItem } from "./VideoItem";
         event.target.pauseVideo();
       }
         const videoDisplay = (video) => {
+          // const divEL = useRef(null);
+
       return (   
-        <React.Fragment>
+        <div >
             <YouTube videoId={video.id.videoId} opts={opts} onReady={_onReady} onPlay={onPlay} />
             <Paper elevation={6} style={{ padding: "15px" }}>
               <Typography variant="h4">
@@ -29,9 +31,9 @@ import { VideoItem } from "./VideoItem";
               </Typography>
               <Typography variant="subtitle2">{video.snippet.description}</Typography>
             </Paper>
-          </React.Fragment>)
+          </div>)
     }
-    if (!video) {return <div>Loading...</div>} 
+    if (!video) {return <div></div>} 
         
         else {
           return videoDisplay(video)

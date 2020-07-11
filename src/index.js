@@ -2,5 +2,9 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import App from './App'
+import {
+  BrowserRouter as Router,
 
-ReactDom.render(<App/>, document.querySelector('#root'))
+} from "react-router-dom";
+
+ReactDom.render(<Router><App/></Router>, document.querySelector('#root'))
