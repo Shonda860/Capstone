@@ -10,7 +10,7 @@ class Nav extends Component {
 return(
   <nav>
   <div className="nav-wrapper">
-    <a href="#" className="brand-logo">Encore</a>
+    <a href="#" className="brand-logo">ENCORE</a>
     <ul id="nav-mobile" className="right hide-on-med-and-down">
      
       <li><Link to="/League">Leagues</Link></li>
