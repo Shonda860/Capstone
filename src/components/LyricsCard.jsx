@@ -1,27 +1,19 @@
 import React from 'react';
-import genius from "./api/genius";
-
-export default class LyricsCard extends React.Component {
-  const [lyrics, setLyrics] = useState([]);
-
-  async componentDidMount(){
-    const { data: { items: lyrics } } = await youtube.get("search",{
-      params:{
-      q: "Kendrick"
-    }
-  });
-//const url = "api.genius.com/"
-      // const response = await fetch(url);
-    // const data = await response.json();
-    // console.log(data)
+import { getLyrics } from 'genius-lyrics-api';
 
 
-  render(){
-    return(
-      <div>
-      {this.state.loading ? <div>loading...</div>: <div>person..</div>}
-      </div>
-    )
-  }
-}
+
+function LyricsCard() {
+  const options = {
+    apiKey: 'U7S9-1u6C-lzyhukTgGZ_ZFo3JMsqcdeltRcmqrR7Vk6G6wB-wY2Q9PPhZqPncNq',
+    title: 'Blinding Lights',
+    artist: 'The Weeknd',
+    optimizeQuery: true
+};
  
+getLyrics(options).then((lyrics) => console.log(lyrics));
+ 
+  return (<div>LC</div>  );
+}
+export default LyricsCard;
+

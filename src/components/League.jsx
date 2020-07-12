@@ -11,8 +11,7 @@ import React from "react";
       }
       
      
-    return <button onClick={clickHandler}>{name}</button>
-      
+    return <span><button onClick={clickHandler}>{name}</button></span>      
 }
 
 export default League;
