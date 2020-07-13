@@ -78,7 +78,7 @@ export default () => {
             </Grid>
             <Grid item xs={4}>
                 { showList && <VideoList 
-            videos={videos} onVideoSelect={setSelectedVideo} />}{showLyrics && <Counters/>}
+            videos={videos} onVideoSelect={setSelectedVideo} />}{showLyrics && <Counters video={selectedVideo}/>}
             </Grid>
           </Grid>
         </Grid>          
