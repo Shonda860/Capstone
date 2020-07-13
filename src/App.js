@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid} from "@material-ui/core";
+import { Grid,Paper} from "@material-ui/core";
 import './App.css';
 // import styles from './mystyle.module.css'; 
 import { Counters,LyricsCard,SearchBar,VideoList, VideoDetail, League,Home,Nav, Battleraplogy} from "./components";
@@ -78,7 +78,7 @@ export default () => {
             </Grid>
             <Grid item xs={4}>
                 { showList && <VideoList 
-            videos={videos} onVideoSelect={setSelectedVideo} />}{showLyrics && <Counters video={selectedVideo}/>}
+            videos={videos} onVideoSelect={setSelectedVideo} />}{showLyrics && <Paper elevation={6} style={{ padding: "15px" }}><Counters video={selectedVideo}/></Paper>}
             </Grid>
           </Grid>
         </Grid>          
