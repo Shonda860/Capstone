@@ -13,6 +13,7 @@
     "lyricist": "^2.2.2",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
+    "react-aspect-ratio": "^1.0.42",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",

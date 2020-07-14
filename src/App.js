@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Grid,Paper} from "@material-ui/core";
+import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
 // import styles from './mystyle.module.css'; 
 import { Counters,LyricsCard,SearchBar,VideoList, VideoDetail, League,Home,Nav, Battleraplogy} from "./components";
@@ -39,6 +40,7 @@ export default () => {
     setVideos(videos);
     setSelectedVideo(videos[0]);
   }
+  
 
   async function getChannel(id) {
       try {const { data: { items: videos } } = await youtube.get("search", {
@@ -49,7 +51,7 @@ export default () => {
         } 
       });
     setVideos(videos);
-    setSelectedVideo(videos[0]);} 
+   } 
     catch(err){
       // console.log(err)
     }

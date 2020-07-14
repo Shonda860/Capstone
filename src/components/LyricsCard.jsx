@@ -1,19 +1,22 @@
 import React from 'react';
-import { getLyrics } from 'genius-lyrics-api';
+import Lyricist from 'lyricist';
 
 
-
-function LyricsCard() {
-  const options = {
-    apiKey: 'U7S9-1u6C-lzyhukTgGZ_ZFo3JMsqcdeltRcmqrR7Vk6G6wB-wY2Q9PPhZqPncNq',
-    title: 'Blinding Lights',
-    artist: 'The Weeknd',
-    optimizeQuery: true
-};
- 
-getLyrics(options).then((lyrics) => console.log(lyrics));
- 
-  return (<div>LC</div>  );
+const lyricist = new Lyricist('UrQZA5HGEs5oJQY0xLHtAk-TFhVkeoifDAuX8YObykRoOGPhD81jmHCdrT6MQIrX');
+const testfunction = async()=> {
+   const song = await lyricist.song(714198);
+  console.log(song.title);
 }
+ 
+const LyricsCard =()=> {
+  // use await here
+  testfunction()
+  return <div></div>;
+};
+
 export default LyricsCard;
+
+
+
+
 

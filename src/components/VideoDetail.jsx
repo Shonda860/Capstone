@@ -1,11 +1,12 @@
 import React from "react";
 import YouTube from 'react-youtube'
+import AspectRatio from 'react-aspect-ratio';
 import { Paper, Typography } from "@material-ui/core";
 // import { VideoItem } from "./VideoItem";
 
   const VideoDetail = ({video, onPlay}) => {
     const opts = {
-      height: '500',
+      height: '100%',
       width: '100%',
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
@@ -14,14 +15,18 @@ import { Paper, Typography } from "@material-ui/core";
     }
       function _onReady(event) {
         // access to player in all event handlers via event.target
-        event.target.pauseVideo();
+        // event.target.pauseVideo();
       }
+
+      // TODO - LET PPL KNOW HOW TO START
         const videoDisplay = (video) => {
           // const divEL = useRef(null);
 
       return (   
         <div >
-            <YouTube videoId={video.id.videoId} opts={opts} onReady={_onReady} onPlay={onPlay} />
+        <AspectRatio ratio="16/9">
+            <YouTube videoId={video.id.videoId} opts={opts} onReady={_onReady} onPlay={onPlay} /></AspectRatio>
+
             <Paper elevation={6} style={{ padding: "15px" }}>
               <Typography variant="h4">
                 {video.snippet.title} - {video.snippet.channelTitle}
@@ -32,7 +37,9 @@ import { Paper, Typography } from "@material-ui/core";
               <Typography variant="subtitle2">{video.snippet.description}</Typography>
             </Paper>
           </div>)
-    }
+          
+    };
+    console.log(video);
     if (!video) {return <div></div>} 
         
         else {
