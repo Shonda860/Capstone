@@ -18,6 +18,11 @@ import { Paper, Typography } from "@material-ui/core";
         // event.target.pauseVideo();
       }
 
+      // function onStateChange(event){
+      //   if ( event.data=== 0) {
+
+      //   }
+
       // TODO - LET PPL KNOW HOW TO START
         const videoDisplay = (video) => {
           // const divEL = useRef(null);
@@ -39,7 +44,7 @@ import { Paper, Typography } from "@material-ui/core";
           </div>)
           
     };
-    console.log(video);
+    // console.log(video);
     if (!video) {return <div></div>} 
         
         else {
@@ -49,7 +54,7 @@ import { Paper, Typography } from "@material-ui/core";
 
  export default VideoDetail;
   
-  // const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+  
   
   
 

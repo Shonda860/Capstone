@@ -3,7 +3,7 @@ import { Grid,Paper} from "@material-ui/core";
 import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
 // import styles from './mystyle.module.css'; 
-import { Counters,LyricsCard,SearchBar,VideoList, VideoDetail, League,Home,Nav, Battleraplogy} from "./components";
+import { Counters,LyricsCard,SearchBar,VideoList, VideoDetail, League,Home,Nav, Battleraplogy,Signin} from "./components";
 import {
   Switch,
   Route,
@@ -18,7 +18,7 @@ export default () => {
   const [showLyrics, setShowLyrics] = useState(false)
  
 
-  // const [selectedLeague, setSelectedLeague] = useState(null);
+  
   
 
   const onPlay =() => {
@@ -92,7 +92,9 @@ export default () => {
     <Route export path="/lyricscard">
     <LyricsCard/>
     </Route>
-    
+    <Route export path="/signin">
+    <Signin/>
+    </Route>
     </Switch>
 
     </React.Fragment>

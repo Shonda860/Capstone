@@ -1,8 +1,8 @@
-import axios from 'axios'
-require('dotenv').config();
+// import axios from 'axios'
+// require('dotenv').config();
 
-export default axios.create({
-  baseURL: 'https://api.genius.com/',
+// export default axios.create({
+//   baseURL: 'https://api.genius.com/',
 
   
-});
+// });
