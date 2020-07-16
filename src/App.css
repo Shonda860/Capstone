@@ -1,91 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 
-/* Tablet Landscape */
-@media screen and (max-width: 1060px) {
-  #primary { width:67%; }
-  #secondary { width:30%; margin-left:3%;}  
-}
-/* Tabled Portrait */
-@media screen and (max-width: 768px) {
-  #primary { width:100%; }
-  #secondary { width:100%; margin:0; border:none; }
-}
-.App {
-  text-align: center;
-}
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  /* background: rgb(23, 25, 26); */
-  color:white;
-  margin-right: 156px
-}
-.nav-links{
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-
-}
-.brand {
-  color: rgb(187, 63, 63)
-}
-
-.our-story-header-wrapper {
-  background-color: transparent;
-  -webkit-transition: background-color .5s;
-  -o-transition: background-color .5s;
-  -moz-transition: background-color .5s;
-  transition: background-color .5s;
-  position: relative;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding-top: 20px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5rem;
-  z-index: 10;
-}
-.our-story-header {
-  position: relative;
-  margin: 0 3.5rem;
-  height: 100%;
-}
-.authLinks.redButton {
-  background-color: #e50914;
-  line-height: normal;
-  padding: 7px 17px;
-  font-weight: 400;
-  font-size: 1rem;
-  float: right;
-  margin: 13px;
-}
-.authLinks {
-  color: #fff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-top: .5rem;
-}
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -10px;
-  margin-left: -10px;
-}
 
 
 
-.test_class {
-  background-color: #e50914;
-}
+
+
+
+

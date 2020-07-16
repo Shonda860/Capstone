@@ -10,6 +10,7 @@
     "axios": "^0.19.2",
     "dns": "^0.2.2",
     "dotenv": "^8.2.0",
+    "form-data": "^3.0.0",
     "genius-lyrics-api": "^3.0.2",
     "lyricist": "^2.2.2",
     "materialize-css": "^1.0.0-rc.2",
@@ -17,6 +18,7 @@
     "react-aspect-ratio": "^1.0.42",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.1.21",
+    "react-player": "^2.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-youtube": "^7.11.2"

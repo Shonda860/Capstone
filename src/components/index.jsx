@@ -9,3 +9,6 @@ export {default as Battleraplogy } from './Battleraplogy';
 export {default as LyricsCard } from './LyricsCard';
 export {default as Counters } from './Counters';
 export {default as Signin} from './Signin';
+export {default as OurModal} from './OurModal';
+export {default as Header} from './Header';
+export {default as Footer} from './Footer';

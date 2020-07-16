@@ -14,17 +14,21 @@ class Counter extends Component {
      this.props.increaseTotalCount(this.props.whichArtist)
      
    }
-   async addVote(){
-    const call = await callapp.post("/",{
-        artist: this.props.artist,
-        videoId: this.props.video.id.videoId,
-        userName: "shonda",
-        tagId: this.props.tag,
-    },
-      {headers:{'Content-Type': 'application/x-www-form-urlencoded'}
-  })
-      console.log(call)
-   }
+
+
+  async addVote(){
+    const call = await callapp.post('/',{
+          artist: this.props.artist,
+          videoId: this.props.video.id.videoId,
+          userName: "shonda",
+          tagId: this.props.tag,
+          // headers:{'Content-Type': 'application/x-www-form-urlencoded'},   
+      //  }
+    })   
+    console.log(call)
+  }
+    
+ 
 
   render() { 
     console.log("props", this.props)

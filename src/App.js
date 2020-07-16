@@ -3,7 +3,7 @@ import { Grid,Paper} from "@material-ui/core";
 import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
 // import styles from './mystyle.module.css'; 
-import { Counters,LyricsCard,SearchBar,VideoList, VideoDetail, League,Home,Nav, Battleraplogy,Signin} from "./components";
+import { Counters,LyricsCard,VideoList, VideoDetail, League,Home,Nav, Battleraplogy,Signin,Header,Footer,OurModal} from "./components";
 import {
   Switch,
   Route,
@@ -62,7 +62,9 @@ export default () => {
     <Nav/> 
     <Switch>
     <Route exact path="/">
+      <Header/>
       <Home/>
+     
     </Route>
     <Route exact path="/league">
         <Grid item xs={11}>
@@ -96,7 +98,7 @@ export default () => {
     <Signin/>
     </Route>
     </Switch>
-
+      <Footer/>
     </React.Fragment>
   ); 
 }
