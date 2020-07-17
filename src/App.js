@@ -3,7 +3,7 @@ import { Grid,Paper} from "@material-ui/core";
 import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
 // import styles from './mystyle.module.css'; 
-import { Counters,LyricsCard,VideoList, VideoDetail, League,Home,Nav, Battleraplogy,Signin,Header,Footer,OurModal} from "./components";
+import { Counters,LyricsCard,VideoList, VideoDetail, League,Home,Nav, Battleraplogy,Signin,Header,Footer,OurModal,SearchBar} from "./components";
 import {
   Switch,
   Route,
@@ -32,7 +32,7 @@ export default () => {
       params: {
         part: "snippet",
         maxResults: 5,
-        key: process.env.REACT_APP_API_KEY,
+   
         q: searchTerm,
       }
     });
@@ -47,7 +47,7 @@ export default () => {
         params: {
           part: "snippet",
           channelId: id,
-          key: process.env.REACT_APP_API_KEY,
+
         } 
       });
     setVideos(videos);
@@ -59,6 +59,7 @@ export default () => {
  
   return (
     <React.Fragment>
+
     <Nav/> 
     <Switch>
     <Route exact path="/">
@@ -88,12 +89,8 @@ export default () => {
         </Grid>          
      
     </Route>
-    <Route export path="/battleraplogy">
-    <Battleraplogy/>
-    </Route>
-    <Route export path="/lyricscard">
-    <LyricsCard/>
-    </Route>
+  
+    
     <Route export path="/signin">
     <Signin/>
     </Route>
@@ -102,6 +99,11 @@ export default () => {
     </React.Fragment>
   ); 
 }
+  // <Route export path="/battleraplogy">
+    // <Battleraplogy/>
+    // </Route>
+    // <Route export path="/lyricscard">
+    // <LyricsCard/>
+    // </Route>
 
-
-      
+    // <SearchBar onSubmit={handleSubmit}/>
