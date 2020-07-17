@@ -3,18 +3,17 @@ import callapp from "../api/callapp";
 
 class Counter extends Component {
     state = {
-      count: 0,
       // tags: ['Fire', 'Like', 'OK', 'Dislike', 'Wack']
-      total: []
+      total: [],
+      count:0
     };
-
+    
    handleIncrement = () => {
     this.addVote() 
-    this.setState({ count: this.state.count + 1 });
-     this.props.increaseTotalCount(this.props.whichArtist)
+    this.props.refresh()
+    this.props.increaseTotalCount(this.props.whichArtist)
      
    }
-
 
   async addVote(){
     const call = await callapp.post('/',{
@@ -56,8 +55,9 @@ class Counter extends Component {
   }
 
 formatCount(){
-  const {count} = this.state;
-  return count === 0 ? "Zero" : count
+  const count = this.props.count[this.props.tag];
+  return count === 0 ? "Zero" :count
+  
 }
 
 
