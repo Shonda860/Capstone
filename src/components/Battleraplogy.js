@@ -1,7 +1,17 @@
-// import React from 'react'
-// import  {AppBar,Toolbar, Typography} from 'material-ui'
+import React from 'react'
+import  {AppBar,Toolbar, Typography} from '@material-ui/core'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+export default props =>
 
-// expor
+<MuiThemeProvider>
+  <AppBar position="static"  color="transparent" className="white-text">
+    <Toolbar>
+      <Typography variant="display 4">
+        Battleraplogy Database
+      </Typography>
+    </Toolbar>
+  </AppBar>
+</MuiThemeProvider>
 
 // import React from 'react';
 // import Data from './data.json'

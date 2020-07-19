@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 // import logo from "./log"
 import {Link} from 'react-router-dom'
 import 'materialize-css/dist/css/materialize.min.css'
+import Image from './img/crowd_silhouette.png'
+import './Nav.css';
+const styles = {
+  banner: {
+      backgroundImage: `url(${Image})`
+  }
+};
+
 
 
 class Nav extends Component {
@@ -18,10 +26,10 @@ class Nav extends Component {
 render () {
    
 return(
-  <nav className="teal">
-    <div className="nav-wrapper">
+  <nav className= "black" >
+    <div className="nav-wrapper ">
     <a href="#" data-target="slide-out" className="sidenav-trigger show-on-large"><i className="material-icons">menu</i></a>
-      <a href="#" className="brand-logo">ENCORE</a>
+      <a href="#" className="brand-logo logo red-text">ENCORE</a>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li><Link to="/League">Leagues</Link></li>
         <li><Link to="/Battleraplogy">Battleraplogy</Link></li>
