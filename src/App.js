@@ -75,8 +75,8 @@ export default () => {
     <Route exact path="/league">
         <Grid item xs={11}>
           <Grid container spacing={10}>
-            <Grid item xs={8}>  
-            <div>
+            <Grid style={{float: 'right'}} item xs={8}>  
+            <div >
             <League name="KOTD" getChannel={getChannel} id='UCIuFtIO8i_XqA8lM7q4B1FQ' /> 
             <League name="URL"  getChannel={getChannel} id='UCflIAeM03JFL9ml03LwYF-g'/>
             <League name="UDUBB" getChannel={getChannel} id='UCIuFtIO8i_XqA8lM7q4B1FQ' />
