@@ -92,12 +92,12 @@ class JudgeCounters extends Component {
        <p>JudgeCounter</p>
       
         <h3>Artist:{this.state.artists[0]}</h3>  
-        { this.state.tags.map(tag => <JudgeCounter artist={this.state.artists[0]} video={this.props.video} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
+        { this.state.tags.map(tag => <JudgeCounter userName={this.props.userName} artist={this.state.artists[0]} video={this.props.video} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
           <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountA}</span></p> 
 
         <h3>Artist:{this.state.artists[1]}</h3>
-        { this.state.tags.map(tag => <JudgeCounter artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
+        { this.state.tags.map(tag => <JudgeCounter userName={this.props.userName} artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
         <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountB}</span></p> 
        

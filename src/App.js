@@ -22,14 +22,22 @@ export default () => {
   const [showList, setShowList] = useState(true)
   const [showFanCard, setShowFanCard] = useState(false)
   const [showStart, setShowStart] = useState(true)
-  const [mode, setMode] = useState(null)
+  const [mode, setMode] = useState("Fan Mode")
+  const [userName,setUserName] = useState('')
 
   const onPlay =() => {
     setShowList(false) 
     // console.log('inside onPlay')
     setShowFanCard(true) 
-  
   }
+
+  // TODO 
+  // const onEnd =() => {
+  //   setShowList(false) 
+  //   // console.log('inside onPlay')
+  //   setShowFanCard(true) 
+  // }
+
   const onStart =() => {
     setShowStart(false)
   
@@ -59,7 +67,7 @@ export default () => {
   
     <MuiThemeProvider>
     <React.Fragment>
-    <Nav/> 
+    <Nav usernameCallback={setUserName}/> 
     <Switch>
     <Route exact path="/">
       <Carousel/>
@@ -81,8 +89,8 @@ export default () => {
             </Grid>
             <Grid item xs={4}>
                 { showList && <VideoList 
-            videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters video={selectedVideo}/></Paper>}
-            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters video={selectedVideo}/></Paper>}
+            videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
+            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
             </Grid>
           </Grid>
         </Grid>          

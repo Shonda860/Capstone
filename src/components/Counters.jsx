@@ -65,19 +65,19 @@ class Counters extends Component {
       let total = 0
       
       if (artistName === "A"){
-        Object.values(this.state.voteCountA).forEach(value => { total += value})
+        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag]})
         this.setState({totalCountA:total})
       } else {
-        Object.values(this.state.voteCountB).forEach(value => { total += value})}
+        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag]})}
         this.setState({totalCountB:total})
     }
 
     
 
-    handleDelete = () => {
-     console.log("Event Handler Called")
+    // handleDelete = () => {
+    //  console.log("Event Handler Called")
        
-     }
+    //  }
    
   render() { 
       
@@ -86,12 +86,12 @@ class Counters extends Component {
        <p>Fan Mode</p>
       
         <h3>Artist:{this.state.artists[0]}</h3>  
-        { this.state.tags.map(tag => <Counter artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
+        { this.state.tags.map(tag => <Counter userName={this.props.userName}artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
           <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountA}</span></p> 
 
         <h3>Artist:{this.state.artists[1]}</h3>
-        { this.state.tags.map(tag => <Counter artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
+        { this.state.tags.map(tag => <Counter userName={this.props.userName} artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
         <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountB}</span></p> 
        

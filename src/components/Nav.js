@@ -35,7 +35,7 @@ return(
         <li><Link to="/league">Leagues</Link></li>
         <li><Link to="/Battleraplogy">Battleraplogy</Link></li>
         <li><Link to="/LyricsCard" >LyricsCard</Link></li>
-        <li><Link to="/Signin" ><Signin/></Link></li>
+        <li><Link to="/Signin" ><Signin usernameCallback={this.props.usernameCallback}/></Link></li>
       </ul>
     </div>
 </nav>

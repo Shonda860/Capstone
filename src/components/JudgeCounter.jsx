@@ -19,7 +19,7 @@ class JudgeCounter extends Component {
     const call = await callapp.post('/',{
           artist: this.props.artist,
           videoId: this.props.video.id.videoId,
-          userName: "shonda",
+          userName: this.props.userName,
           tagId: this.props.tag,
           // headers:{'Content-Type': 'application/x-www-form-urlencoded'},   
       //  }

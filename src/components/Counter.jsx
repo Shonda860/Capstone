@@ -19,7 +19,7 @@ class Counter extends Component {
     const call = await callapp.post('/',{
           artist: this.props.artist,
           videoId: this.props.video.id.videoId,
-          userName: "shonda",
+          userName: this.props.userName,
           tagId: this.props.tag,
           // headers:{'Content-Type': 'application/x-www-form-urlencoded'},   
       //  }
@@ -42,7 +42,7 @@ class Counter extends Component {
     return (
       <div>
           <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm m-2">{this.props.tag}</button>
-          <button onClick={()=>this.props.onDelete(this.props.tag)} className="btn btn-danger btn-sm m-2">Delete</button>
+       
           <span style={{fontSize: '20px',
           fontWeight: "bold"}} className= {this.getBadgeClasses()}>{this.formatCount()}</span>
       </div>
@@ -65,3 +65,5 @@ formatCount(){
 
 }
 export default Counter;
+
+   // <button onClick={()=>this.props.onDelete(this.props.tag)} className="btn btn-danger btn-sm m-2">Delete</button>

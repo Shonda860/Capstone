@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import GoogleLogin from 'react-google-login'
 
-export default () => {
+export default (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [url, setUrl] = useState("");
@@ -9,6 +9,7 @@ export default () => {
 
   const responseGoogle = response =>{
     setName(response.profileObj.name)
+    props.usernameCallback(response.profileObj.name)
     setEmail(response.profileObj.email)
     setUrl(response.profileObj.imageUrl)
     console.log(response)

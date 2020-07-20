@@ -13,6 +13,7 @@ export default function RadioButtonsGroup(props) {
   const handleChange = (event) => {
     setValue(event.target.value);
     props.setMode(event.target.value)
+  console.log(event.target.value)
   }; 
   const defaultProps = {
   bgcolor: 'background.paper',
