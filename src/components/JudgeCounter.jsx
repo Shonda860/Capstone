@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import callapp from "../api/callapp";
 
-class Counter extends Component {
+class JudgeCounter extends Component {
     state = {
       // tags: ['Fire', 'Like', 'OK', 'Dislike', 'Wack']
       total: [],
@@ -14,7 +14,7 @@ class Counter extends Component {
     this.props.increaseTotalCount(this.props.whichArtist)
      
    }
-  
+
   async addVote(){
     const call = await callapp.post('/',{
           artist: this.props.artist,
@@ -42,7 +42,6 @@ class Counter extends Component {
     return (
       <div>
           <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm m-2">{this.props.tag}</button>
-          <button onClick={()=>this.props.onDelete(this.props.tag)} className="btn btn-danger btn-sm m-2">Delete</button>
           <span style={{fontSize: '20px',
           fontWeight: "bold"}} className= {this.getBadgeClasses()}>{this.formatCount()}</span>
       </div>
@@ -64,4 +63,4 @@ formatCount(){
 
 
 }
-export default Counter;
+export default JudgeCounter;

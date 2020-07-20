@@ -7,11 +7,12 @@ export {default as Home } from './Home';
 export {default as League } from './League';
 // 
 export {default as Counters } from './Counters';
+export {default as JudgeCounters } from './JudgeCounters';
 export {default as Signin} from './Signin';
 export {default as OurModal} from './OurModal';
 export {default as Carousel} from './Carousel';
-// 
-export {default as Battleraplogy} from './Battleraplogy';
+export {default as StartUp} from './StartUp';
+// export {default as Battleraplogy} from './layouts/Battleraplogy';
 export {default as Footer} from './layouts/Footer';
 // export {default as DictionarySearch} from './DictionarySearch';
 export {default as Terminology} from './terminology/index';

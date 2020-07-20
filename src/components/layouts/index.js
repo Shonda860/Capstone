@@ -1,9 +1,25 @@
-import Battleraplogy from '../Battleraplogy'
+import Battleraplogy from './Battleraplogy'
 import Footer from './Footer'
 
 export {
   Battleraplogy, Footer
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import React, { Component } from 'react';
 // import { Grid} from "@material-ui/core";

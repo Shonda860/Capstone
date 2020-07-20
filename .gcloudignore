@@ -1,0 +1,5 @@
+.gitignore
+.git
+.env
+node_modules/
+*~s

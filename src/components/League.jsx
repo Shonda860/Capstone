@@ -9,13 +9,12 @@ import 'materialize-css/dist/css/materialize.min.css'
         // setSelectedLeague(id)
         getChannel(id)  
         
-      }
-      
-     
+    }
+
     return (
       <React.Fragment>
-        <span>
-          <button onClick={clickHandler}>{name}</button>
+        <span >
+          <a href={"/league#" + name} className="btn-small red " onClick={clickHandler}>{name}</a>
         </span> 
       </React.Fragment>
     
