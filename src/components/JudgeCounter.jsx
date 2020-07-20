@@ -41,7 +41,7 @@ class JudgeCounter extends Component {
     
     return (
       <div>
-          <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm m-2">{this.props.tag}</button>
+          <button onClick={this.handleIncrement} className="btn red btn-sm m-2">{this.props.tag}</button>
           <span style={{fontSize: '20px',
           fontWeight: "bold"}} className= {this.getBadgeClasses()}>{this.formatCount()}</span>
       </div>

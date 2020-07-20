@@ -4,7 +4,7 @@ import AspectRatio from 'react-aspect-ratio';
 import { Paper, Typography } from "@material-ui/core";
 // import { VideoItem } from "./VideoItem";
 
-  const VideoDetail = ({video, onPlay, onStart}) => {
+  const VideoDetail = ({video, onPlay, onStart, onEnd}) => {
     const opts = {
       height: '100%',
       width: '100%',
@@ -28,9 +28,9 @@ import { Paper, Typography } from "@material-ui/core";
           // const divEL = useRef(null);
 
       return (   
-        <div >
+        <div style={{marginLeft: "25px"}}>
         <AspectRatio ratio="16/9">
-            <YouTube videoId={video.id.videoId} opts={opts} onReady={_onReady} onPlay={onPlay} /></AspectRatio>
+            <YouTube videoId={video.id.videoId} opts={opts} onReady={_onReady} onPlay={onPlay} onEnd={onEnd}/></AspectRatio>
 
             <Paper elevation={6} style={{ padding: "15px" }}>
               <Typography variant="h4">

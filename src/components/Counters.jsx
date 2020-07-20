@@ -73,11 +73,14 @@ class Counters extends Component {
     }
 
     
+ 
+    loadSideBar() {
+      if (this.state.isBattleOver){
 
-    // handleDelete = () => {
-    //  console.log("Event Handler Called")
-       
-    //  }
+      }else {
+  
+      }
+    } 
    
   render() { 
       
@@ -85,12 +88,12 @@ class Counters extends Component {
       <div> 
        <p>Fan Mode</p>
       
-        <h3>Artist:{this.state.artists[0]}</h3>  
+        <p>Artist:{this.state.artists[0]}</p>  
         { this.state.tags.map(tag => <Counter userName={this.props.userName}artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
           <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountA}</span></p> 
 
-        <h3>Artist:{this.state.artists[1]}</h3>
+        <p>Artist:{this.state.artists[1]}</p>
         { this.state.tags.map(tag => <Counter userName={this.props.userName} artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
         <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountB}</span></p> 

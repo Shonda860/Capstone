@@ -7,3 +7,23 @@
 .frame-border { 
   border:5px solid rgb(70, 64, 64); 
   }
+
+  .maid-wrapper{
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+.slider-holder{
+    width: 100%;
+    padding-bottom: 10px;
+    height: 85vh!important
+  }
+
+.carousel{
+    height: 45vh!important
+}
+
+.video {
+  padding-top: 20px;
+}
+ 

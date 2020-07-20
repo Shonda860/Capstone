@@ -1,79 +1,47 @@
-import React from 'react'
-import {Paper, Tabs,Tab} from '@material-ui/core'
+import React, { Component } from 'react'
+import { compose } from 'recompose'
+import { withWidth, AppBar, Tabs, Tab } from '@material-ui/core'
+import { withContext } from '../../context'
 
-import OurModal from "../OurModal";
+class Footer extends Component {
+  letters = this.getLetters()
 
-export default ({muscles,category, onSelect}) => {
-  const index = category
-  ? muscles.findIndex(group => group === category) + 1
-  : 0
+  getLetters () {
+    return [ '', ...this.props.letters ]
+  }
 
-const onIndexSelect = (e, index) =>
-  onSelect(index === 0 ? '' : muscles[index - 1])
+  onIndexSelect = (e, index) => {
+    this.props.onCategorySelect(this.letters[index])
+  }
 
-return(
-  <Paper elevation={6} style={{ padding: "15px" }}>
-    <Tabs
-      value={0}
-      // onChange={handleChange}
-      indicatorColor="primary"
-      textColor="primary"
-      centered
-    > 
-    <Tab label="ALL"/>
-    {muscles.map(group =>
-      <Tab label={group}/>)}
-   </Tabs>
-  </Paper>
-  )
+  getIndex = () => {
+    return this.letters.indexOf(this.props.category)
+  }
+
+  render () {
+    const { width } = this.props
+    const isMobile = width === 'xs'
+
+    return (
+      <AppBar position='static' className="grey">
+        <Tabs
+          value={this.getIndex()}
+          onChange={this.onIndexSelect}
+          indicatorColor='secondary'
+          textColor='secondary'
+          variant={isMobile ? 'scrollable' : 'standard'}
+          centered={!isMobile}
+        >
+          {this.letters.map(group =>
+            <Tab key={group} label={group || 'All'} />
+          )}
+        </Tabs>
+      </AppBar>
+    )
+  }
 }
 
-
-// import React from 'react'
-// import { Paper, Tabs } from 'material-ui'
-// import { Tab } from 'material-ui/Tabs'
-
-// export default ({ muscles, category, onSelect }) => {
-//   const index = category
-//     ? muscles.findIndex(group => group === category) + 1
-//     : 0
-
-//   const onIndexSelect = (e, index) =>
-//     onSelect(index === 0 ? '' : muscles[index - 1])
-
-//   return <Paper>
-//     <Tabs
-//       value={index}
-//       onChange={onIndexSelect}
-//       indicatorColor="primary"
-//       textColor="primary"
-//       centered
-//     >
-//       <Tab label="All" />
-//       {muscles && muscles.map(group =>
-//         <Tab key={group} label={group} />
-//       )}
-//     </Tabs>
-//   </Paper>
-// }
-
-
-// // import React from 'react'
-// // import {Paper, Tabs,Tab} from '@material-ui/core'
-
-// // import OurModal from "./OurModal";
-
-// // export default props =>
-// //   <Paper elevation={6} style={{ padding: "15px" }}>
-// //     <Tabs
-// //       value={0}
-// //       // onChange={handleChange}
-// //       indicatorColor="primary"
-// //       textColor="primary"
-// //       centered
-// //     >
-// //       <Tab label="Item One" />
-// //       <Tab label="Item Two" />
-// //       <Tab label="Item Three" />
-// //     </Tabs>
-// //   </Paper>
+export default compose(
+  withContext,
+  withWidth()
+)(Footer)

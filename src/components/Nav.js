@@ -30,12 +30,13 @@ return(
   <nav className= "black" >
     <div className="nav-wrapper ">
     <a href="#" data-target="slide-out" className="sidenav-trigger show-on-large"><i className="material-icons">menu</i></a>
-      <a href="#" className="brand-logo logo red-text">ENCORE</a>
+      <a href="/" className="brand-logo logo red-text">ENCORE</a>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><Link to="/league">Leagues</Link></li>
-        <li><Link to="/Battleraplogy">Battleraplogy</Link></li>
-        <li><Link to="/LyricsCard" >LyricsCard</Link></li>
-        <li><Link to="/Signin" ><Signin usernameCallback={this.props.usernameCallback}/></Link></li>
+         <li><Link to="/voting" >Voting</Link></li>
+         <li><Link to="/league">Leagues</Link></li>
+        <li><Link to="/battlerapology">Battlerapology</Link></li>
+       
+       <li><Link to="/Signin" > <Signin usernameCallback={this.props.usernameCallback}/></Link></li>
       </ul>
     </div>
 </nav>

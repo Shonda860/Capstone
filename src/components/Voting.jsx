@@ -4,7 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 // import { Paper, Typography } from "@material-ui/core";
 // import { VideoItem } from "./VideoItem";
 
-  const League = ({name,id, getChannel}) => {
+  const Voting = ({name,id, getChannel}) => {
       const clickHandler =()=>{
         // setSelectedLeague(id)
         getChannel(id)  
@@ -13,12 +13,12 @@ import 'materialize-css/dist/css/materialize.min.css'
 
     return (
       <React.Fragment>
-        <span >
-          <a href={"/league#" + name} className="btn-small red " onClick={clickHandler}>{name}</a>
+        <span style={{float:"right", marginTop:"50"}}>
+          <a href={"/voting#" + name} className="btn-small deep-orange" style={{ marginLeft: '10px'}} onClick={clickHandler}>{name}</a>
         </span> 
       </React.Fragment>
     
       ) 
 }
 
-export default League;
+export default Voting;
