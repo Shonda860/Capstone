@@ -56,7 +56,7 @@ class JudgeCounter extends Component {
 
 formatCount(){
   const count = this.props.count[this.props.tag];
-  return count === 0 ? "Zero" :count
+  return !count ? "Zero" :count
   
 }
 

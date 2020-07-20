@@ -4,7 +4,7 @@ import AspectRatio from 'react-aspect-ratio';
 import { Paper, Typography } from "@material-ui/core";
 // import { VideoItem } from "./VideoItem";
 
-  const VideoDetail = ({video, onPlay}) => {
+  const VideoDetail = ({video, onPlay, onStart}) => {
     const opts = {
       height: '100%',
       width: '100%',
@@ -48,7 +48,8 @@ import { Paper, Typography } from "@material-ui/core";
     if (!video) {return <div></div>} 
         
         else {
-          return videoDisplay(video)
+        onStart()
+         return videoDisplay(video)
       };
 }
 

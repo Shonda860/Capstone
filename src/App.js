@@ -21,15 +21,18 @@ export default () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [showList, setShowList] = useState(true)
   const [showFanCard, setShowFanCard] = useState(false)
-  const [showStart, setShowStart] = useState(false)
+  const [showStart, setShowStart] = useState(true)
+  const [mode, setMode] = useState(null)
 
   const onPlay =() => {
     setShowList(false) 
     // console.log('inside onPlay')
     setShowFanCard(true) 
+  
   }
   const onStart =() => {
-    setShowStart(false) 
+    setShowStart(false)
+  
     // console.log('inside onPlay')
   }
 
@@ -73,13 +76,13 @@ export default () => {
             <League name="BULLPEN" getChannel={getChannel} id='UCY-ME2gHi5DvKw4iMnOIziA' /> </div> 
             </Grid>
             <Grid item xs={8}>
-               
-              <VideoDetail video={selectedVideo} onPlay={onPlay} />
+               {showStart && <StartUp setMode={setMode}/>}
+              <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} />
             </Grid>
             <Grid item xs={4}>
-            
                 { showList && <VideoList 
-            videos={videos} onVideoSelect={setSelectedVideo} />}{showFanCard && <Paper elevation={6} style={{ padding: "15px" }}><Counters video={selectedVideo}/></Paper>}
+            videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters video={selectedVideo}/></Paper>}
+            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters video={selectedVideo}/></Paper>}
             </Grid>
           </Grid>
         </Grid>          

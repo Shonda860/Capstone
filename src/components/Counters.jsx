@@ -72,13 +72,7 @@ class Counters extends Component {
         this.setState({totalCountB:total})
     }
 
-     loadSideBar() {
-      if (this.state.isBattleOver){
-
-      }else {
-  
-      }
-    } 
+    
 
     handleDelete = () => {
      console.log("Event Handler Called")

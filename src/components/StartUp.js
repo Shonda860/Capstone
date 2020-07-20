@@ -7,11 +7,12 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Box from '@material-ui/core/Box';
 import Counters from "./Counters";
 
-export default function RadioButtonsGroup() {
+export default function RadioButtonsGroup(props) {
   const [value, setValue] = React.useState('Fan Mode');
 
   const handleChange = (event) => {
     setValue(event.target.value);
+    props.setMode(event.target.value)
   }; 
   const defaultProps = {
   bgcolor: 'background.paper',
