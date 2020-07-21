@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid,Paper} from "@material-ui/core";
 import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
-import { JudgeCounters,Counters,VideoList, VideoDetail, League,Nav,Carousel, StartUp,Term,LeagueInfo,Home,BattleOver } from "./components";
+import { JudgeCounters,Counters,VideoList, VideoDetail, League,Nav,Carousel, StartUp,Term,LeagueInfo,Home,BattleOver, AboutBattle} from "./components";
 import {
   Switch,
   Route,
@@ -22,7 +22,8 @@ export default () => {
   const [mode, setMode] = useState("Fan Mode")
   const [userName,setUserName] = useState('')
   const [battleOver, setBattleOver] = useState(false)
-  const [userVoteCount, setuserVoteCount] = useState({})
+  const [userVoteCount, setUserVoteCount] = useState([])
+  const [hideVideo, setHideVideo] = useState(true)
   const onPlay =() => {
     setShowList(false) 
     // console.log('inside onPlay')
@@ -31,6 +32,8 @@ export default () => {
 
   // TODO 
   const onEnd =() => {
+    setHideVideo(false)
+    setShowFanCard(true) 
     getUserVoteCount()
     
     console.log('inside onEnd')
@@ -50,8 +53,6 @@ export default () => {
 
   async function getUserVoteCount(){
     const artists = getArtist()
-    const artistAObject = {}
-    const artistBObject = {}
      const artistsA = await callapp.get("/user",{
         params: {
           artist: artists[0],
@@ -59,8 +60,8 @@ export default () => {
           userName: userName
         }
       })
-      artistAObject[artists[0]] = artistsA.data
-     
+      // artistAObject[artists[0]] = artistsA.data
+      const artistAObject = {name: artists[0], votes: artistsA.data}
       const artistsB = await callapp.get("/user",{
       params: {
         artist: artists[1],
@@ -68,8 +69,9 @@ export default () => {
         userName: userName
       }
     }) 
-      artistBObject[artists[1]] = artistsB.data  
-      setuserVoteCount({...artistAObject, ...artistBObject})
+      // artistBObject[artists[1]] = artistsB.data 
+      const artistBObject = {name: artists[1], votes: artistsB.data} 
+      setUserVoteCount([artistAObject, artistBObject])
       setBattleOver(true)
    };
   
@@ -118,26 +120,26 @@ export default () => {
             <div>
             <League name="KOTD" getChannel={getChannel} id='UCIuFtIO8i_XqA8lM7q4B1FQ' /> 
             <League name="URL"  getChannel={getChannel} id='UCflIAeM03JFL9ml03LwYF-g'/>
-            <League name="UDUBB" getChannel={getChannel} id='UCIuFtIO8i_XqA8lM7q4B1FQ' />
+            <League name="UDUBB" getChannel={getChannel} id='UC3psUl-IQCBboXS334JdDpA' />
             <League name="QUEEN OF THE RING" getChannel={getChannel} id='UCk-nxzyAUCJoeWyPXaDsbFw' /> 
-            <League name="BULLPEN" getChannel={getChannel} id='UCY-ME2gHi5DvKw4iMnOIziA' /> </div> 
+            <League name="BULLPEN" getChannel={getChannel} id='UCY-ME2gHi5DvKw4iMnOIziA' />
+            <League name="Grind Time" getChannel={getChannel} id='UCSfPVl0BBm9g3SvG_WaDTrw' /> </div> 
             </Grid>
             <Grid item xs={8}>
-               {showStart && <StartUp setMode={setMode}/>}
-               {battleOver && <BattleOver userName={userName} userVoteCount={userVoteCount} /> }
-              <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} onEnd={onEnd} />
+               {showStart && <StartUp setMode={setMode}/>} {battleOver && <BattleOver onEnd={onEnd} userName={userName} userVoteCount={userVoteCount} /> }
+              {hideVideo && <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} onEnd={onEnd} />} 
             </Grid>
             <Grid item xs={4}>
                 { showList && <VideoList 
             videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
             {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
-            {(mode === "Over" && battleOver) && <Paper elevation={6} style={{ padding: "15px" }}><BattleOver/></Paper>}
+            {(mode === "Over" && battleOver) && <Paper elevation={6} style={{ padding: "15px" }}><BattleOver onEnd={onEnd} userName={userName} userVoteCount={userVoteCount}/></Paper>}
             </Grid>
           </Grid>
         </Grid>          
      
     </Route>
-    <Route export path="/battlerapology">
+    <Route export path="/dictionary">
         <Term/>
 
      </Route>
@@ -146,6 +148,10 @@ export default () => {
     <Route export path="/league">
       <LeagueInfo/>
      </Route>
+     <Route export path="/battlerapology">
+     <AboutBattle/>
+    </Route>
+    
     </Switch>
     
     </React.Fragment>  

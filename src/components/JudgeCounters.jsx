@@ -63,15 +63,15 @@ class JudgeCounters extends Component {
 
     // console.log(result,title)
    }
+
     
     setTotalCount(artistName){
       let total = 0
-      
       if (artistName === "A"){
-        Object.values(this.state.voteCountA).forEach(value => { total += value})
+        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
         this.setState({totalCountA:total})
       } else {
-        Object.values(this.state.voteCountB).forEach(value => { total += value})}
+        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })}
         this.setState({totalCountB:total})
     }
 

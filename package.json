@@ -21,13 +21,14 @@
     "react-aspect-ratio": "^1.0.42",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.1.21",
+    "react-parallax": "^3.0.3",
     "react-player": "^2.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
     "react-youtube": "^7.11.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --no-cache",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

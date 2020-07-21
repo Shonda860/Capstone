@@ -27,7 +27,7 @@ class Counters extends Component {
   }
    
    getVoteCount =() =>{
-    const artists = this.getArtist()
+    const artists = this.state.artists
      callapp.get("/",{
         params: {
           artist: artists[0],
@@ -68,9 +68,10 @@ class Counters extends Component {
         this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
         this.setState({totalCountA:total})
       } else {
-        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })}
+        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })
         this.setState({totalCountB:total})
-    }
+     }
+   }
 
     
  
@@ -85,11 +86,11 @@ class Counters extends Component {
   render() { 
       
     return ( 
-      <div> 
+      <div  > 
        <p>Fan Mode</p>
       
         <p>Artist:{this.state.artists[0]}</p>  
-        { this.state.tags.map(tag => <Counter userName={this.props.userName}artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
+        { this.state.tags.map(tag => <Counter userName={this.props.userName} artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
           <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountA}</span></p> 
 

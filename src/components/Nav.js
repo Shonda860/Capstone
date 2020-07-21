@@ -30,8 +30,8 @@ return(
       <ul id="nav-mobile" className="right hide-on-med-and-down">
          <li><Link to="/voting" >Voting</Link></li>
          <li><Link to="/league">Leagues</Link></li>
+        <li><Link to="/dictionary">Dictionary</Link></li>
         <li><Link to="/battlerapology">Battlerapology</Link></li>
-       
        <li><Link to="/Signin" > <Signin usernameCallback={this.props.usernameCallback}/></Link></li>
       </ul>
     </div>

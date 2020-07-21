@@ -22,11 +22,11 @@ class Carousel extends Component {
       <div className="main-wrapper"> 
       <div class="slider-holder"> 
      <div className="carousel carousel-slider center" >
-    <div className="carousel-item header_text black-text" href="#one!" style={{paddingTop: "10px"}}>
+    <div className="carousel-item header_text black-text" href="#one!" style={{paddingTop: "20px"}}>
       <h2> B. Dot / Geechi Gotti vs A. Ward / Loso</h2>
       <p className="black-text">KOTD x #INVASION </p>
       <div className="video">
-      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/Nq-APDNbdD8" frameborder="1" ></iframe>
+      <iframe className="frame-border" width="550px" height="350px"src="//www.youtube.com/embed/Nq-APDNbdD8" frameborder="1" ></iframe>
       </div>
    </div>
     <div className="carousel-item  header_text black-text" href="#two!">

@@ -77,7 +77,7 @@ const useStyles = makeStyles({
      
       </RadioGroup>
     </FormControl>
-    <OurModal />
+    <OurModal style={{marginLeft: "40px", }}/>
     </div>  
      
     </Box>
