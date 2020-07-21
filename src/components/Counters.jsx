@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Counter from "./Counter";
-import VideoDetail from "./VideoDetail";
-import PropTypes from 'prop-types';
+// import VideoDetail from "./VideoDetail";
+// import PropTypes from 'prop-types';
 import callapp from "../api/callapp";
 // import { Button } from 'react-bootstrap/';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -63,12 +63,12 @@ class Counters extends Component {
     
     setTotalCount(artistName){
       let total = 0
-      
+
       if (artistName === "A"){
-        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag]})
+        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
         this.setState({totalCountA:total})
       } else {
-        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag]})}
+        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })}
         this.setState({totalCountB:total})
     }
 

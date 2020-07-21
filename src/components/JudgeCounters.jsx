@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import JudgeCounter from "./JudgeCounter";
-import VideoDetail from "./VideoDetail";
-import PropTypes from 'prop-types';
+// import VideoDetail from "./VideoDetail";
+// import PropTypes from 'prop-types';
 import callapp from "../api/callapp";
 // import { Button } from 'react-bootstrap/';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,13 +18,15 @@ class JudgeCounters extends Component {
     totalCountB: 0,
     isBattleOver: false,
     voteCountA: {},
-    voteCountB: {} 
+    voteCountB: {}   ,
+   
    };
 
  componentDidMount() {
      this.getVoteCount()
     
   }
+
    
    getVoteCount =() =>{
     const artists = this.getArtist()
@@ -46,13 +48,11 @@ class JudgeCounters extends Component {
       }).then((call) => {
         this.setState({voteCountB: call.data})
         this.setTotalCount("B")
-      })
-     
-     
+      })   
    }
 
-
  
+   
     getArtist() {  
       // regex
     let pattern = /([a-zA-Z\s]*)\svs\s([a-zA-Z\s]*)/
@@ -82,7 +82,6 @@ class JudgeCounters extends Component {
   
       }
     } 
-
 
    
   render() { 

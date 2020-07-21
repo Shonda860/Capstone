@@ -7,6 +7,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import callapp from "./api/callapp";
 import youtube from "./api/youtube";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -21,6 +22,7 @@ export default () => {
   const [mode, setMode] = useState("Fan Mode")
   const [userName,setUserName] = useState('')
   const [battleOver, setBattleOver] = useState(false)
+  const [userVoteCount, setuserVoteCount] = useState({})
   const onPlay =() => {
     setShowList(false) 
     // console.log('inside onPlay')
@@ -29,9 +31,10 @@ export default () => {
 
   // TODO 
   const onEnd =() => {
-    setBattleOver(true) 
-    // console.log('inside onPlay')
-
+    getUserVoteCount()
+    
+    console.log('inside onEnd')
+    
   }
 
   const onStart =() => {
@@ -40,11 +43,50 @@ export default () => {
     // console.log('inside onPlay')
   }
 
-  const handleSelectOfCard =() => {
-    setShowStart(true) 
-    // console.log('inside onPlay')
-  }
+  // const handleSelectOfCard =() => {
+  //   setShowStart(true) 
+  //   // console.log('inside onPlay')
+  // }
+
+  async function getUserVoteCount(){
+    const artists = getArtist()
+    const artistAObject = {}
+    const artistBObject = {}
+     const artistsA = await callapp.get("/user",{
+        params: {
+          artist: artists[0],
+          videoId: selectedVideo.id.videoId,
+          userName: userName
+        }
+      })
+      artistAObject[artists[0]] = artistsA.data
+     
+      const artistsB = await callapp.get("/user",{
+      params: {
+        artist: artists[1],
+        videoId: selectedVideo.id.videoId,
+        userName: userName
+      }
+    }) 
+      artistBObject[artists[1]] = artistsB.data  
+      setuserVoteCount({...artistAObject, ...artistBObject})
+      setBattleOver(true)
+   };
   
+   
+  const getArtist =()=> {  
+    // regex
+  let pattern = /([a-zA-Z\s]*)\svs\s([a-zA-Z\s]*)/
+  const title = selectedVideo.snippet.title
+  let result = pattern[Symbol.match](title)
+  
+  return [result[1],result[2]]
+
+  // console.log(result,title)
+ }
+
+
+
   async function getChannel(id) {
       try {const { data: { items: videos } } = await youtube.get("search", {
         params: {
@@ -82,13 +124,14 @@ export default () => {
             </Grid>
             <Grid item xs={8}>
                {showStart && <StartUp setMode={setMode}/>}
-               {battleOver && <BattleOver/> }
+               {battleOver && <BattleOver userName={userName} userVoteCount={userVoteCount} /> }
               <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} onEnd={onEnd} />
             </Grid>
             <Grid item xs={4}>
                 { showList && <VideoList 
             videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
             {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
+            {(mode === "Over" && battleOver) && <Paper elevation={6} style={{ padding: "15px" }}><BattleOver/></Paper>}
             </Grid>
           </Grid>
         </Grid>          

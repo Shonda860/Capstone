@@ -6,11 +6,7 @@ import Image from './img/crowd_silhouette.png'
 import './Nav.css';
 import Signin from "./Signin";
 
-const styles = {
-  banner: {
-      backgroundImage: `url(${Image})`
-  }
-};
+
 
 class Nav extends Component {
   constructor(props){

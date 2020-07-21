@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import callapp from "../api/callapp";
 
 class JudgeCounter extends Component {
+  
     state = {
       // tags: ['Fire', 'Like', 'OK', 'Dislike', 'Wack']
       total: [],
       count:0
     };
-    
+
    handleIncrement = () => {
     this.addVote() 
     this.props.refresh()

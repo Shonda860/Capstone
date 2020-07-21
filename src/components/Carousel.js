@@ -1,10 +1,10 @@
 import React, { Component }  from 'react'
 import './Carousel.css'
-import YouTube from 'react-youtube'
-import ReactPlayer from "react-player";
-import crowd from './img/nicholas-green-nPz8akkUmDI-unsplash.jpg'
-import OurModal from "./OurModal";
-import Home from "./Home";
+// import YouTube from 'react-youtube'
+// import ReactPlayer from "react-player";
+// import crowd from './img/nicholas-green-nPz8akkUmDI-unsplash.jpg'
+// import OurModal from "./OurModal";
+// import Home from "./Home";
 
 class Carousel extends Component {
 
