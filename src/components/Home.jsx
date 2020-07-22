@@ -5,7 +5,7 @@ class Home extends Component {
   render() { 
     return ( 
       
-      <section className="section section-icons center">
+      <section className="section section-icons center" >
         <div className="container">
           <div className="row">
             <div className="col s12 m4">

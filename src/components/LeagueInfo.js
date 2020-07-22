@@ -51,7 +51,7 @@ export default function RecipeReviewCard() {
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+          <Avatar aria-label="league" className={classes.avatar}>
             R
           </Avatar>
         }
@@ -60,18 +60,17 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="King of The DOT"
+        subheader="Founded 2008"
       />
       <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        title="KOTD"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+        King of the Dot Entertainment, also known as KOTD, is a rap battle league founded in Toronto, Ontario, Canada in 2008. The company's HQ is based in Toronto, from which it gets its name. Successful music artists such as Shotty Horroh, 360, Canibus, and Madchild have battled in King of the Dot.
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -94,18 +93,12 @@ export default function RecipeReviewCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>More Info:</Typography>
           <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+          Primarily featuring Canadians and Americans, emcees from countries such as England, Scotland, Australia, Sweden, Norway, Philippines, South Africa, and Russia have all battled in King of the Dot’s annual World Domination event. The influence of King of the Dot has spread globally, inspiring the creation of other battle leagues such as FlipTop in the Philippines, Dissneeland in Vietnam, and Versus Battle in Russia.[1]
           </Typography>
           <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+           King of the Dot has three leagues — PY Battles (Try-Outs); GZ Battles (North American stand alone smaller league); and KOTD (worldwide big league).[3]
           </Typography>
           <Typography paragraph>
             Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
@@ -115,7 +108,7 @@ export default function RecipeReviewCard() {
             minutes more. (Discard any mussels that don’t open.)
           </Typography>
           <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+           King of the Dot events feature all elements of hip hop culture, including a cappella emcee battles, freestyle battles over instrumentals, live performances by hip hop artists, beatboxing, graffiti exhibits, DJing, and breaking.[4]
           </Typography>
         </CardContent>
       </Collapse>

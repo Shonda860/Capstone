@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import JudgeCounter from "./JudgeCounter";
-import VideoDetail from "./VideoDetail";
-import PropTypes from 'prop-types';
+// import VideoDetail from "./VideoDetail";
+// import PropTypes from 'prop-types';
 import callapp from "../api/callapp";
 // import { Button } from 'react-bootstrap/';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,18 +13,20 @@ class JudgeCounters extends Component {
     }
   state = {
     artists: this.getArtist(),
-    tags: ['WordPlay', 'Punchline', 'Delivery', 'Lyrical', 'Aggresion', 'Witty', 'Scheme'],
+    tags: ['WordPlay', 'Punchline', 'Delivery', 'Lyrical', 'Aggression', 'Witty', 'Scheme'],
     totalCountA: 0,
     totalCountB: 0,
     isBattleOver: false,
     voteCountA: {},
-    voteCountB: {} 
+    voteCountB: {}   ,
+   
    };
 
  componentDidMount() {
      this.getVoteCount()
     
   }
+
    
    getVoteCount =() =>{
     const artists = this.getArtist()
@@ -46,13 +48,11 @@ class JudgeCounters extends Component {
       }).then((call) => {
         this.setState({voteCountB: call.data})
         this.setTotalCount("B")
-      })
-     
-     
+      })   
    }
 
-
  
+   
     getArtist() {  
       // regex
     let pattern = /([a-zA-Z\s]*)\svs\s([a-zA-Z\s]*)/
@@ -63,15 +63,15 @@ class JudgeCounters extends Component {
 
     // console.log(result,title)
    }
+
     
     setTotalCount(artistName){
       let total = 0
-      
       if (artistName === "A"){
-        Object.values(this.state.voteCountA).forEach(value => { total += value})
+        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
         this.setState({totalCountA:total})
       } else {
-        Object.values(this.state.voteCountB).forEach(value => { total += value})}
+        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })}
         this.setState({totalCountB:total})
     }
 
@@ -83,20 +83,19 @@ class JudgeCounters extends Component {
       }
     } 
 
-
    
   render() { 
       
     return ( 
       <div> 
-       <p>JudgeCounter</p>
+       <p>Judge Mode</p>
       
-        <h3>Artist:{this.state.artists[0]}</h3>  
+        <p>Artist:{this.state.artists[0]}</p>  
         { this.state.tags.map(tag => <JudgeCounter userName={this.props.userName} artist={this.state.artists[0]} video={this.props.video} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
           <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountA}</span></p> 
 
-        <h3>Artist:{this.state.artists[1]}</h3>
+        <p>Artist:{this.state.artists[1]}</p>
         { this.state.tags.map(tag => <JudgeCounter userName={this.props.userName} artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
         <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountB}</span></p> 

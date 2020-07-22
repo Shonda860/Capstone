@@ -14,6 +14,7 @@ export default ({ videos, onVideoSelect }) => {
     />
   ));
 
+
   return (
     <Grid container spacing={2}>
       {listOfVideos}

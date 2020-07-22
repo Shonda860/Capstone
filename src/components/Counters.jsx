@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Counter from "./Counter";
-import VideoDetail from "./VideoDetail";
-import PropTypes from 'prop-types';
+// import VideoDetail from "./VideoDetail";
+// import PropTypes from 'prop-types';
 import callapp from "../api/callapp";
 // import { Button } from 'react-bootstrap/';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,7 +27,7 @@ class Counters extends Component {
   }
    
    getVoteCount =() =>{
-    const artists = this.getArtist()
+    const artists = this.state.artists
      callapp.get("/",{
         params: {
           artist: artists[0],
@@ -63,34 +63,38 @@ class Counters extends Component {
     
     setTotalCount(artistName){
       let total = 0
-      
+
       if (artistName === "A"){
-        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag]})
+        this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
         this.setState({totalCountA:total})
       } else {
-        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag]})}
+        this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })
         this.setState({totalCountB:total})
-    }
+     }
+   }
 
     
+ 
+    loadSideBar() {
+      if (this.state.isBattleOver){
 
-    // handleDelete = () => {
-    //  console.log("Event Handler Called")
-       
-    //  }
+      }else {
+  
+      }
+    } 
    
   render() { 
       
     return ( 
-      <div> 
+      <div  > 
        <p>Fan Mode</p>
       
-        <h3>Artist:{this.state.artists[0]}</h3>  
-        { this.state.tags.map(tag => <Counter userName={this.props.userName}artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
+        <p>Artist:{this.state.artists[0]}</p>  
+        { this.state.tags.map(tag => <Counter userName={this.props.userName} artist={this.state.artists[0]} video={this.props.video} onDelete={this.handleDelete} tag={tag} refresh={this.getVoteCount} count={this.state.voteCountA} increaseTotalCount={this.setTotalCount} whichArtist={"A"}/>)}
           <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountA}</span></p> 
 
-        <h3>Artist:{this.state.artists[1]}</h3>
+        <p>Artist:{this.state.artists[1]}</p>
         { this.state.tags.map(tag => <Counter userName={this.props.userName} artist={this.state.artists[1]} count={this.state.voteCountB} refresh={this.getVoteCount} tag={tag} video={this.props.video} increaseTotalCount={this.setTotalCount} whichArtist={"B"}/>)}
         <p>Total<span className="badge m-2 badge-" style={{fontSize: '20px', 
           fontWeight: "bold"}}>{this.state.totalCountB}</span></p> 

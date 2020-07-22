@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import callapp from "../api/callapp";
 
 class JudgeCounter extends Component {
+  
     state = {
       // tags: ['Fire', 'Like', 'OK', 'Dislike', 'Wack']
       total: [],
       count:0
     };
-    
+
    handleIncrement = () => {
     this.addVote() 
     this.props.refresh()
@@ -40,8 +41,8 @@ class JudgeCounter extends Component {
 
     
     return (
-      <div>
-          <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm m-2">{this.props.tag}</button>
+      <div style={{marginRight: "10px"}}>
+          <button onClick={this.handleIncrement} className="btn deep-orange btn-sm m-2" style={{marginTop: "10px"}}>{this.props.tag} </button>
           <span style={{fontSize: '20px',
           fontWeight: "bold"}} className= {this.getBadgeClasses()}>{this.formatCount()}</span>
       </div>

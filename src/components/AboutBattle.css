@@ -1,0 +1,15 @@
+.plain {
+  background-color: white;
+}
+
+.blacked {
+  background-color: black;
+}
+
+.tall {
+  min-height: 100vh!important
+}
+
+/* .parallax-container{
+  height: 600px;
+} */
