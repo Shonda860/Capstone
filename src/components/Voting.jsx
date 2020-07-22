@@ -13,7 +13,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 
     return (
       <React.Fragment>
-        <span style={{float:"right", marginTop:"50"}}>
+        <span style={{float:"right", marginTop:"50px"}}>
           <a href={"/voting#" + name} className="btn-small deep-orange" style={{ marginLeft: '10px'}} onClick={clickHandler}>{name}</a>
         </span> 
       </React.Fragment>
