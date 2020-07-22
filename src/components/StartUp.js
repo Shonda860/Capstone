@@ -22,7 +22,7 @@ export default function RadioButtonsGroup(props) {
   borderColor: 'text.primary',
   m: 1,
   border: 1,
-  style: { width: '650px', height: '600px' },
+  style: { width: '700px', height: '600px' },
 };
 
 const useStyles = makeStyles({
@@ -68,7 +68,7 @@ const useStyles = makeStyles({
 
   return (
     <Box display="flex" style={{marginLeft: "40px", marginTop: "100px"}} >
-     <Box className="black" borderRadius={16} {...defaultProps} ><div style={{marginLeft: "60px", marginTop: "70px"}}><h4>Please Select a League from Above</h4><h5 style={{marginTop: "40px"}}>You have selected:{value}</h5>
+     <Box className="black" borderRadius={16} {...defaultProps} ><div style={{marginLeft: "60px", marginTop: "70px"}}><h4 className="red-text">Please Select a League from Above</h4><h5 style={{marginTop: "40px"}}>You have selected: {value}</h5>
     <FormControl component="fieldset" >
       <FormLabel component="legend" className="white-text"></FormLabel>
       <RadioGroup aria-label="mode"  className="white-text" name="mode1" name="customized-radios" value={value} onChange={handleChange}>

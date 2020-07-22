@@ -117,34 +117,30 @@ export default () => {
     <Carousel/>
     <Home/>
     </Route>
-<<<<<<< HEAD
-    <Route exact path="/league">
-        <Grid item xs={11}>
-          <Grid container spacing={10}>
-            <Grid style={{float: 'right'}} item xs={8}>  
-            <div >
-=======
+
     <Route export path="/landing">
      <Landing/>
     </Route>
     <Route exact path="/voting">
         <Grid item xs={11} style={{marginLeft: "40px"}}>
-          <Grid container spacing={8}>
+          <Grid container spacing={10}>
             <Grid item xs={8}>  
             <div>
->>>>>>> local
+
             <League name="KOTD" getChannel={getChannel} id='UCIuFtIO8i_XqA8lM7q4B1FQ' /> 
             <League name="URL"  getChannel={getChannel} id='UCflIAeM03JFL9ml03LwYF-g'/>
             <League name="UDUBB" getChannel={getChannel} id='UC3psUl-IQCBboXS334JdDpA' />
             <League name="QUEEN OF THE RING" getChannel={getChannel} id='UCk-nxzyAUCJoeWyPXaDsbFw' /> 
             <League name="BULLPEN" getChannel={getChannel} id='UCY-ME2gHi5DvKw4iMnOIziA' />
-            <League name="Grind Time" getChannel={getChannel} id='UCSfPVl0BBm9g3SvG_WaDTrw' /> </div> 
+            <League name="Grind Time" getChannel={getChannel} id='UCSfPVl0BBm9g3SvG_WaDTrw' /> 
+            <League name="DON'T FLOP" getChannel={getChannel} id='UCtk06jK3PvU6pZvrj68ROfQ' />
+            <League name="iBATTLETV" getChannel={getChannel} id='UCcn1FcR6MoWhnZ0gfH2dVJw' /> </div> 
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={6}>
                {showStart && <StartUp mode={mode} setMode={setMode}/>} {battleOver && <BattleOver mode={mode} onEnd={onEnd} userName={userName} userVoteCount={userVoteCount} /> }
               {hideVideo && <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} onEnd={onEnd} />} 
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
                 { showList && <VideoList 
             videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
             {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
@@ -156,7 +152,6 @@ export default () => {
     </Route>
     <Route export path="/dictionary">
         <Term/>
-
      </Route>
     <Route export path="/signin">
     </Route> 
