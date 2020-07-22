@@ -11,7 +11,7 @@ import OurModal from './OurModal'
 
 export default function RadioButtonsGroup(props) {
   const [value, setValue] = React.useState('Fan Mode');
-
+  
   const handleChange = (event) => {
     setValue(event.target.value);
     props.setMode(event.target.value)

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid,Paper} from "@material-ui/core";
 import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
-import { JudgeCounters,Counters,VideoList, VideoDetail, League,Nav,Carousel, StartUp,Term,LeagueInfo,Home,BattleOver, AboutBattle} from "./components";
+import { JudgeCounters,Counters,VideoList, VideoDetail, League,Nav,Carousel, StartUp,Term,LeagueInfo,Home,BattleOver, AboutBattle,Landing} from "./components";
 import {
   Switch,
   Route,
@@ -42,9 +42,12 @@ export default () => {
 
   const onStart =() => {
     setShowStart(false)
+    
   
     // console.log('inside onPlay')
   }
+
+  
 
   // const handleSelectOfCard =() => {
   //   setShowStart(true) 
@@ -69,6 +72,7 @@ export default () => {
         userName: userName
       }
     }) 
+      console.log("async", artistsA, artistsB)
       // artistBObject[artists[1]] = artistsB.data 
       const artistBObject = {name: artists[1], votes: artistsB.data} 
       setUserVoteCount([artistAObject, artistBObject])
@@ -113,6 +117,9 @@ export default () => {
     <Carousel/>
     <Home/>
     </Route>
+    <Route export path="/landing">
+     <Landing/>
+    </Route>
     <Route exact path="/voting">
         <Grid item xs={11} style={{marginLeft: "40px"}}>
           <Grid container spacing={8}>
@@ -126,7 +133,7 @@ export default () => {
             <League name="Grind Time" getChannel={getChannel} id='UCSfPVl0BBm9g3SvG_WaDTrw' /> </div> 
             </Grid>
             <Grid item xs={8}>
-               {showStart && <StartUp setMode={setMode}/>} {battleOver && <BattleOver onEnd={onEnd} userName={userName} userVoteCount={userVoteCount} /> }
+               {showStart && <StartUp mode={mode} setMode={setMode}/>} {battleOver && <BattleOver mode={mode} onEnd={onEnd} userName={userName} userVoteCount={userVoteCount} /> }
               {hideVideo && <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} onEnd={onEnd} />} 
             </Grid>
             <Grid item xs={4}>

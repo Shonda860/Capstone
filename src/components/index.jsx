@@ -12,12 +12,8 @@ export {default as OurModal} from './OurModal';
 export {default as Carousel} from './Carousel';
 export {default as StartUp} from './StartUp';
 export {default as Footer} from './layouts/Footer';
-// export {default as DictionarySearch} from './DictionarySearch';
 export {default as AboutBattle} from './AboutBattle';
-export {default as Dictionary} from './Dictionary';
 export {default as BattleOver} from './BattleOver';
 export {default as Term} from './Term';
 export {default as LeagueInfo} from './LeagueInfo';
-
-// export {default as Terminology} from './terminology/index';
-// export {default as LyricsCard } from './LyricsCard';
+export {default as Landing} from './Landing';

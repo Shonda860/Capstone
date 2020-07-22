@@ -13,7 +13,7 @@ class JudgeCounters extends Component {
     }
   state = {
     artists: this.getArtist(),
-    tags: ['WordPlay', 'Punchline', 'Delivery', 'Lyrical', 'Aggresion', 'Witty', 'Scheme'],
+    tags: ['WordPlay', 'Punchline', 'Delivery', 'Lyrical', 'Aggression', 'Witty', 'Scheme'],
     totalCountA: 0,
     totalCountB: 0,
     isBattleOver: false,
