@@ -72,12 +72,12 @@ const useStyles = makeStyles({
     <FormControl component="fieldset" >
       <FormLabel component="legend" className="white-text"></FormLabel>
       <RadioGroup aria-label="mode"  className="white-text" name="mode1" name="customized-radios" value={value} onChange={handleChange}>
-        <FormControlLabel  value="Fan Mode" control={<Radio className= "white-text"/>} label="Fan Mode" /><p>In Fan watch you are watching from a purely entertainment vaule</p>
+        <FormControlLabel  value="Fan Mode" control={<Radio className= "white-text"/>} label="Fan Mode" /><p>In Fan watch you are watching from a purely entertainment value</p>
         <FormControlLabel value="Judge Mode" control={<Radio className= "white-text"/>} label="Judge Mode" /><p>In Judge Mode Attention to detail is key give points based on skill</p>
      
       </RadioGroup>
     </FormControl>
-    <OurModal style={{marginLeft: "40px", }}/>
+    <OurModal style={{marginBottom: "40px" }}/>
     </div>  
      
     </Box>
