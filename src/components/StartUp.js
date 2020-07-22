@@ -68,10 +68,10 @@ const useStyles = makeStyles({
 
   return (
     <Box display="flex" style={{marginLeft: "40px", marginTop: "100px"}} >
-     <Box className="black" borderRadius={16} {...defaultProps} ><div style={{marginLeft: "60px", marginTop: "70px"}}><h4 className="red-text">Please Select a League from Above</h4><h5 style={{marginTop: "40px"}}>You have selected: {value}</h5>
+     <Box className="black" borderRadius={16} {...defaultProps} ><div style={{marginLeft: "60px", marginTop: "70px"}}><h4 className="red-text">Please Select a League from Above</h4><h5 style={{marginTop: "40px"}}>You have selected: {value} </h5>
     <FormControl component="fieldset" >
       <FormLabel component="legend" className="white-text"></FormLabel>
-      <RadioGroup aria-label="mode"  className="white-text" name="mode1" name="customized-radios" value={value} onChange={handleChange}>
+      <RadioGroup aria-label="mode"  className="white-text" name="mode1" name="customized-radios" value={value} onChange={handleChange}  style={{marginTop: "20px"}}>
         <div style={{marginBottom: "40px"}}><FormControlLabel  value="Fan Mode" control={<Radio className= "white-text"/>} label="Fan Mode" /><p>In Fan watch you are watching from a purely entertainment value</p>
         <FormControlLabel value="Judge Mode" control={<Radio className= "white-text"/>} label="Judge Mode" /><p>In Judge Mode Attention to detail is key give points based on skill</p></div>
      

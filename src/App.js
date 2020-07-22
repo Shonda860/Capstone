@@ -143,7 +143,7 @@ export default () => {
             <Grid item xs={6}>
                 { showList && <VideoList 
             videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
-            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
+            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px", width: "400px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
             {(mode === "Over" && battleOver) && <Paper elevation={6} style={{ padding: "15px" }}><BattleOver onEnd={onEnd} userName={userName} userVoteCount={userVoteCount}/></Paper>}
             </Grid>
           </Grid>
