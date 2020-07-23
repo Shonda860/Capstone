@@ -22,7 +22,7 @@ export default (props) => {
       <>
       <div>  
         <GoogleLogin
-          clientId= "504143617099-2daum5eaqdjm7dphi198rrv62et7u75l.apps.googleusercontent.com"
+          clientId= "828967388873-4642pa3c1j01k6so78uf8m3d0odut7bt.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
