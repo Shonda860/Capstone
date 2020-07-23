@@ -4,6 +4,7 @@ import {Box, Typography,Grid,  } from '@material-ui/core';
 import Typed from "react-typed";
 import "./AboutBattle.css"
 import './Nav.css';
+import './Landing.css';
 import  logo from "./img/logo.png"
 import Particles from "react-particles-js"
 // CSS Styles 
@@ -43,14 +44,14 @@ const Landing = () => {
       params={{
         particles: {
           number:{
-            value:50,
+            value:90,
             density:{
               enable:true,
               value_area:900
             }
           },
         shape:{
-          type: "lines",
+          type: "stars",
           stroke: {
             width: 4,
             color: "tomato"
@@ -83,7 +84,7 @@ const Landing = () => {
           backSpeed={60}
           loop/>
       </Typography>
-      <a href="/" className="btn-floating btn-large pulse deep-orange"><i className="large material-icons" >home</i></a>
+      <a href="/home" className="btn-floating btn-large pulse deep-orange"><i className="large material-icons" >home</i></a>
     </Box>
     </Box>
   );

@@ -18,7 +18,8 @@ class Counters extends Component {
     totalCountB: 0,
     isBattleOver: false,
     voteCountA: {},
-    voteCountB: {} 
+    voteCountB: {},
+    winner: 0
    };
 
  componentDidMount() {
@@ -59,29 +60,32 @@ class Counters extends Component {
     return [result[1],result[2]]
 
     // console.log(result,title)
-   }
+  }
     
-    setTotalCount(artistName){
-      let total = 0
-
-      if (artistName === "A"){
+  setTotalCount(artistName){
+    let total = 0
+    if (artistName === "A"){
         this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
         this.setState({totalCountA:total})
-      } else {
+    } else {
         this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })
         this.setState({totalCountB:total})
-     }
-   }
-
-    
+    }
+  }
+  // setTotalCount(artistName){
+  //   let total = 0
+  //   if (this.state.totalCountA>this.state.totalCountB){
+  //       this.state.tags.forEach(tag => { total += this.state.voteCountA[tag] || 0})
+  //       this.setState({totalCountA:total})
+  //   } else {
+  //       this.state.tags.forEach(tag => { total += this.state.voteCountB[tag] || 0 })
+  //       this.setState({totalCountB:total})
+  //   }
+  // }
  
-    loadSideBar() {
-      if (this.state.isBattleOver){
 
-      }else {
-  
-      }
-    } 
+   
+    
    
   render() { 
       

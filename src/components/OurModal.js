@@ -19,8 +19,8 @@ class OurModal extends Component {
       <div id="modal1" class="modal">
         <div className="modal-content black-text modal_text" >
           <h3>Modes</h3>
-          <span><p>Fan Mode: in fan mode as a user you are just watching casually. If you feeling it let us know based off the coresponding emoji. Was the bar Lit {lit} or Wack {wack} or something in between</p></span>
-          <span><p>Judge Mode: in fan mode you are scoring based on techinally rate the lyricism, delivery, wittyness and more. </p></span>
+          <span><p>Fan Mode: In fan mode just watching casually. If you're feeling it let us know based off the coresponding emoji. Was the bar Lit {lit} or Wack {wack} or something in between?</p></span>
+          <span><p>Judge Mode: In judge mode you are scoring based on technicality. Rate the lyricism, delivery, wittiness and more. </p></span>
         </div>
         <div class="modal-footer">
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Got it!</a>

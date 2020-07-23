@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 .plain {
   background-color: white;
 }
@@ -13,3 +17,18 @@
 /* .parallax-container{
   height: 600px;
 } */
+
+.section_header{
+  font-family: 'Indie Flower', cursive;
+}
+
+.card_header{
+  font-family: 'Indie Flower', cursive;
+}
+.preview_text{
+  font-family: 'Indie Flower', cursive;
+}
+
+.inside_text{
+  font-family: 'Indie Flower', cursive;
+}

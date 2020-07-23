@@ -26,4 +26,8 @@
 .video {
   padding: 10px;
 }
+
+.tag:hover {
+    color:black;
+}
  

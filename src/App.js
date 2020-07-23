@@ -33,7 +33,7 @@ export default () => {
   // TODO 
   const onEnd =() => {
     setHideVideo(false)
-    setShowFanCard(true) 
+    setShowFanCard(false) 
     getUserVoteCount()
     
     console.log('inside onEnd')
@@ -114,19 +114,21 @@ export default () => {
     <Nav usernameCallback={setUserName}/> 
     <Switch>
     <Route exact path="/">
-    <Carousel/>
-    <Home/>
+    <Landing/>
+
+  
     </Route>
 
-    <Route export path="/landing">
-     <Landing/>
+    <Route export path="/home">
+    <Carousel/> 
+    <Home/>
     </Route>
     <Route exact path="/voting">
-        <Grid item xs={11} style={{marginLeft: "40px"}}>
+        <Grid item xs={12} >
           <Grid container spacing={10}>
             <Grid item xs={8}>  
             <div>
-
+      
             <League name="KOTD" getChannel={getChannel} id='UCIuFtIO8i_XqA8lM7q4B1FQ' /> 
             <League name="URL"  getChannel={getChannel} id='UCflIAeM03JFL9ml03LwYF-g'/>
             <League name="UDUBB" getChannel={getChannel} id='UC3psUl-IQCBboXS334JdDpA' />
@@ -141,9 +143,10 @@ export default () => {
               {hideVideo && <VideoDetail video={selectedVideo} onStart={onStart}onPlay={onPlay} onEnd={onEnd} />} 
             </Grid>
             <Grid item xs={6}>
+            
                 { showList && <VideoList 
-            videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
-            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px", width: "400px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
+            videos={videos} onVideoSelect={setSelectedVideo} />}{(mode === "Judge Mode" && showFanCard) && <Paper elevation={6} style={{ padding: "15px",width:"400px", marginLeft:"100px" }}><JudgeCounters userName={userName} video={selectedVideo}/></Paper>}
+            {(mode === "Fan Mode" && showFanCard) && <Paper elevation={6} style= {{padding: "15px",width:"400px", marginLeft:"100px" }}><Counters userName={userName} video={selectedVideo}/></Paper>}
             {(mode === "Over" && battleOver) && <Paper elevation={6} style={{ padding: "15px" }}><BattleOver onEnd={onEnd} userName={userName} userVoteCount={userVoteCount}/></Paper>}
             </Grid>
           </Grid>

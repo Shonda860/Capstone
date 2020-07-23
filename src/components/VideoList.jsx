@@ -15,10 +15,18 @@ export default ({ videos, onVideoSelect }) => {
     />
   ));
 
-  
+  let header;
+  if (listOfVideos.length === 0){
+    header = ""
+  }else {
+    header =  <h3><Typed style={{marginLeft: "300px"}} className="select-text" strings={["Select A Video"]} typeSpeed={30} loop/></h3>
+  }
   return (
+    <React.Fragment>
+    {header}
     <Grid container spacing={4} style={{marginLeft: "140px", marginTop: "80px"}}>
       {listOfVideos}
     </Grid>
+    </React.Fragment>
   );
 }

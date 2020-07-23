@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import callapp from "../api/callapp";
+import "./Carousel.css"
 
 class Counter extends Component {
     state = {
@@ -26,22 +27,17 @@ class Counter extends Component {
     })   
     console.log(call)
   }
-    
- 
+
+   
 
   render() { 
     console.log("props", this.props)
-    // const {count} = this.props;
+  
 
-    // let totalCount = 0;
-
-    // totalCount += this.state.count
-    // console.log("Total" + totalCount)
-
-    
     return (
       <div>
-          <button onClick={this.handleIncrement} className="btn deep-orange btn-sm m-2" style={{marginTop: "10px"}}>{this.props.tag}</button>
+    
+          <button onClick={this.handleIncrement} className="tooltipped btn deep-orange btn-sm m-2 " data-position="right" data-tooltip={this.props.tag} style={{marginTop: "10px"}}>{this.props.tag}</button>
 
           <span style={{fontSize: '20px',
           fontWeight: "bold"}} className= {this.getBadgeClasses()}>{this.formatCount()}</span>
