@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from "./log"
 import {Link} from 'react-router-dom'
 import 'materialize-css/dist/css/materialize.min.css'
-import Image from './img/crowd_silhouette.png'
+
 import './Nav.css';
 import Signin from "./Signin";
 
