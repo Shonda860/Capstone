@@ -75,12 +75,13 @@ const useStyles = makeStyles({
         <div style={{marginBottom: "40px"}}><FormControlLabel  value="Fan Mode" control={<Radio className= "white-text"/>} label="Fan Mode" /><p>In Fan Mode you are watching from a purely entertainment stand point; give points based on entertainment factors</p>
         <FormControlLabel value="Judge Mode" control={<Radio className= "white-text"/>} label="Judge Mode" /><p>In Judge Mode attention to detail is key; give points based on skill</p></div>
      
-      </RadioGroup>
+      </RadioGroup> 
+      
     </FormControl>
-    <OurModal />
+  
     </div>  
-     
-    </Box>
+     <OurModal/>
+    </Box> 
   </Box>
   );
 }

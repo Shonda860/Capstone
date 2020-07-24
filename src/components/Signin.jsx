@@ -17,12 +17,12 @@ export default (props) => {
   };
 
   
-   
+ 
     return (
-      <>
+      <div>
       <div>  
         <GoogleLogin
-          clientId= "828967388873-4642pa3c1j01k6so78uf8m3d0odut7bt.apps.googleusercontent.com"
+          clientId= "504143617099-2daum5eaqdjm7dphi198rrv62et7u75l.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
@@ -44,7 +44,7 @@ export default (props) => {
       <li><a href="#!" className="waves-effect" href="#!">Battle Name#1</a></li>
       <li><a className="waves-effect" href="#!">Battle Name#2</a></li>
     </ul>
-    </>
+    </div>
   );
 }
 
