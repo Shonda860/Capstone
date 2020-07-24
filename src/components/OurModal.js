@@ -31,12 +31,12 @@ class OurModal extends Component {
     let wack = String.fromCodePoint(0x1F636)
     return ( 
       <>
-      <a
+      <button
         className="waves-effect waves-light btn modal-trigger deep-orange"
         data-target="modal1"
       >
         Click For More Info Voting
-      </a>
+      </button>
       <div
           ref={Modal => {
             this.Modal = Modal;

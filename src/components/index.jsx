@@ -15,5 +15,5 @@ export {default as Footer} from './layouts/Footer';
 export {default as AboutBattle} from './AboutBattle';
 export {default as BattleOver} from './BattleOver';
 export {default as Term} from './Term';
-export {default as LeagueInfo} from './LeagueInfo';
+
 export {default as Landing} from './Landing';

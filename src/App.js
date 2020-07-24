@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid,Paper} from "@material-ui/core";
 import 'react-aspect-ratio/aspect-ratio.css'
 import './App.css';
-import { JudgeCounters,Counters,VideoList, VideoDetail, League,Nav,Carousel, StartUp,Term,LeagueInfo,Home,BattleOver, AboutBattle,Landing} from "./components";
+import { JudgeCounters,Counters,VideoList, VideoDetail, League,Nav,Carousel, StartUp,Term,Home,BattleOver, AboutBattle,Landing} from "./components";
 import {
   Switch,
   Route,
@@ -158,9 +158,7 @@ export default () => {
      </Route>
     <Route export path="/signin">
     </Route> 
-    <Route export path="/league">
-      <LeagueInfo/>
-     </Route>
+   
      <Route export path="/battlerapology">
      <AboutBattle/>
     </Route>

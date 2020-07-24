@@ -1,7 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
-import { Grid} from "@material-ui/core";
 import "./AboutBattle.css"
+
 const image1 =
 "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80" ;
 const image2 =
@@ -35,7 +35,7 @@ function AboutBattle() {
       <div class="row">
       <div class="card col s4" style={{height: "400px", marginLeft: "20px"}}>
       <div class="card-image waves-effect waves-block waves-light">
-        <img className="activator" src="https://cdn.buttercms.com/jdOleijRuq2hw1fsuWgz"/>
+        <img className="activator" src="https://cdn.buttercms.com/jdOleijRuq2hw1fsuWgz" alt="pic of exited male"/>
       </div>
       <div className ="card-content" style={{background: "white"}}>
         <span class="card-title activator grey-text text-darken-4 card_header">What is Battle Rap?<i class="material-icons right">more_vert</i></span>
@@ -63,7 +63,7 @@ function AboutBattle() {
       </div>
       <div class="card col s4" style={{height: "400px", marginLeft: "20px"}}>
       <div class="card-image waves-effect waves-block waves-light">
-        <img className="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaSrZVpmaASI62lQXig6AeJnczraKNczu8cg&usqp=CAU"/>
+        <img className="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaSrZVpmaASI62lQXig6AeJnczraKNczu8cg&usqp=CAU" alt="head to head two males about to battle rap"/>
       </div>
       <div className ="card-content">
         <span class="card-title activator grey-text text-darken-4 card_header">History of Battle Rap?<i class="material-icons right">more_vert</i></span>
@@ -83,7 +83,7 @@ function AboutBattle() {
        <div class="row">
       <div class="card col s4" style={{height: "550px", marginLeft: "20px"}}>
       <div class="card-image waves-effect waves-block waves-light">
-        <img className="activator" style={{padding: "10px", marignTop: "10px", height: "400px"}} src="https://www.nme.com/wp-content/uploads/2018/11/eminem-8-mile-rexfeatures_1555158a.jpg"/>
+        <img className="activator" style={{padding: "10px", marignTop: "10px", height: "400px"}} src="https://www.nme.com/wp-content/uploads/2018/11/eminem-8-mile-rexfeatures_1555158a.jpg" alt="scence from 8 mile xbit and em"/>
       </div>
       <div className ="card-content">
         <span class="card-title activator grey-text text-darken-4 card_header" style={{padding: "10px"}}>8 Mile The Movie<i class="material-icons right">more_vert</i></span>

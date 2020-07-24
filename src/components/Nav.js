@@ -9,8 +9,7 @@ import Signin from "./Signin";
 
 
 class Nav extends Component {
-  constructor(props){
-    super(props)}
+  
   componentDidMount(){
     const M = window.M;
     document.addEventListener('DOMContentLoaded', function() {
@@ -25,7 +24,7 @@ render () {
 return(
   <nav className= "black" >
     <div className="nav-wrapper ">
-    <a href="#" data-target="slide-out" className="sidenav-trigger show-on-large"><i className="material-icons">menu</i></a>
+    <a href="#!" data-target="slide-out" className="sidenav-trigger show-on-large"><i className="material-icons">menu</i></a>
       <a href="/" className="brand-logo logo red-text">ENCORE</a>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
          <li><Link to="/voting" >Voting</Link></li>

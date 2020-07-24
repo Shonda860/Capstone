@@ -41,8 +41,8 @@ export default (props) => {
       <li><a href="#!">Vote History</a></li>
       <li><div className="divider"></div></li>
       <li><a href="#!" className="subheader">Favorite Battles</a></li>
-      <li><a href="#!" className="waves-effect" href="#!">Battle Name#1</a></li>
-      <li><a className="waves-effect" href="#!">Battle Name#2</a></li>
+      <li><a href="#1" className="waves-effect">Battle Name#1</a></li>
+      <li><a  href="#!" className="waves-effect">Battle Name#2</a></li>
     </ul>
     </div>
   );

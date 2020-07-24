@@ -26,28 +26,28 @@ class Carousel extends Component {
       <h2> B. Dot / Geechi Gotti vs A. Ward / Loso</h2>
       <p className="black-text">KOTD x #INVASION </p>
       <div className="video">
-      <iframe className="frame-border" width="550px" height="350px"src="//www.youtube.com/embed/Nq-APDNbdD8" frameborder="1" ></iframe>
+      <iframe className="frame-border" width="550px" height="350px"src="//www.youtube.com/embed/Nq-APDNbdD8" frameborder="1" title="video1"></iframe>
       </div>
    </div>
     <div className="carousel-item  header_text black-text" href="#two!">
       <h2>Bangz vs Chef Trez</h2>
       <p className="black-text"> iBattleTV x #FREESTYLE BATTLE</p>
       <div className="video">
-      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/HyWL6_er5n4" frameborder="1" ></iframe>
+      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/HyWL6_er5n4" frameborder="1" title="video2" ></iframe>
       </div>
 </div>
     <div className="carousel-item header_text black-text" href="#three!">
       <h2>Conceited vs Charlie Clips</h2>
       <p className="black-text">KOTD x #BLACKOUT4</p>
       <div className="video">
-      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/6o6c9lTG5_E" frameborder="1" ></iframe>
+      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/6o6c9lTG5_E" frameborder="1" title="video3"></iframe>
     </div>
 </div>
     <div className="carousel-item header_text black-text" href="#four!">
       <h2>Charlie Clips / Goodz vs Hitman Holla / John John Da Don </h2>
       <p className="black-text">URLTV</p>
       <div className="video">
-      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/WNFpyVhuMvg" frameborder="5" ></iframe>
+      <iframe className="frame-border" width="500px" height="300px"src="//www.youtube.com/embed/WNFpyVhuMvg" frameborder="5" title="video3" ></iframe>
       </div>
       </div>
 
